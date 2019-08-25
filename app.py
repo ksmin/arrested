@@ -78,7 +78,7 @@ def add_company_name(company_id):
     company_name = request.json.get('company_name')
     lang_code = request.json.get('lang_code', 'ko')
     sess = db.session
-    company_name_obj = CompanyName.query.filter_by(company_id, lang_code=lang_code).first()
+    company_name_obj = CompanyName.query.filter_by(company_id=company_id, lang_code=lang_code).first()
     if 'POST' == request.method:
         if company_name_obj is None:
             company_name_obj = CompanyName(company_id=company_id, name=company_name, lang_code=lang_code)
