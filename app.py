@@ -53,7 +53,7 @@ def setup_swagger_ui(application):
     swagger_url = '/api/docs'
     swaggerui_blueprint = get_swaggerui_blueprint(
         swagger_url,
-        'http://127.0.0.1:5000/api/swagger.json',    # API_URL
+        '/api/swagger.json',    # API_URL
         config={
             'app_name': 'Arrested',
         }
@@ -186,4 +186,4 @@ def add_tag_name(tag_id):
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0')
