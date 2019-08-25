@@ -571,20 +571,24 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "description": "회사의 ID"
+        },
+        "lang_code": {
+          "type": "string",
+          "description": "조회된 회사명의 언어코드"
         },
         "name": {
           "type": "string",
-          "example": "Arrested"
+          "example": "Arrested",
+          "description": "회사명"
         },
         "tags": {
           "type": "array",
+          "description": "조회된 회사의 태그 목록",
           "items": {
             "$ref": "#/definitions/tag"
           }
-        },
-        "created_at": {
-          "type": "string"
         }
       }
     },
@@ -593,10 +597,31 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "description": "태그의 ID"
         },
         "name": {
-          "type": "string"
+          "type": "string",
+          "description": "태그명"
+        },
+        "lang_code": {
+          "type": "string",
+          "description": "조회된 태그명의 언어코드"
+        },
+        "created_at": {
+          "type": "string",
+          "description": "생성일시"
+        },
+        "updated_at": {
+          "type": "string",
+          "description": "수정일시"
+        },
+        "companies": {
+          "type": "array",
+          "description": "태그가 연결된 회사 목록",
+          "items": {
+            "$ref": "#/definitions/company"
+          }
         }
       }
     }
