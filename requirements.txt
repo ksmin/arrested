@@ -9,7 +9,7 @@ flask-swagger-ui==3.20.9
 FormEncode==2.0.0a1
 itsdangerous==1.1.0
 Jinja2==2.10.1
-Mako==1.1.0
+Mako==1.2.2
 MarkupSafe==1.1.1
 marshmallow==3.0.1
 mimerender==0.6.0
